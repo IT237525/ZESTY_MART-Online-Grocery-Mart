@@ -1,0 +1,64 @@
+@charset "UTF-8";
+
+body.light-mode {
+    background-color: #f8f9fa;
+    color: #212529;
+}
+
+body.dark-mode {
+    background-color: #212529;
+    color: #f8f9fa;
+}
+
+body.dark-mode .card,
+body.dark-mode .table {
+    background-color: #343a40;
+    color: #f8f9fa;
+}
+
+body.dark-mode .table thead th {
+    background-color: #495057;
+}
+
+body.dark-mode .table tbody tr:hover {
+    background-color: #495057;
+}
+
+.dashboard {
+    padding: 20px;
+}
+
+.dash-content {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.title {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.search-bar {
+    max-width: 500px;
+}
+
+.card {
+    transition: transform 0.2s;
+}
+
+.card:hover {
+    transform: scale(1.02);
+}
+
+.table {
+    margin-top: 20px;
+}
+
+.btn-sm {
+    padding: 5px 10px;
+}
+
+.view-mode {
+    transition: opacity 0.3s;
+}

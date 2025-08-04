@@ -1,0 +1,296 @@
+/* ===== Google Font Import - Poppins ===== */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+:root {
+    /* ===== Colors ===== */
+    --primary-color: #bac34e;
+    --panel-color: #F5F7FA;
+    --text-color: #2D3748;
+    --black-light-color: #718096;
+    --border-color: #E2E8F0;
+    --box1-color: linear-gradient(135deg, #bac34e, #A3A744);
+    --box2-color: linear-gradient(135deg, #FBBF24, #F59E0B);
+    --box3-color: linear-gradient(135deg, #EC4899, #DB2777);
+    --box4-color: linear-gradient(135deg, #34D399, #10B981);
+    --box5-color: linear-gradient(135deg, #A78BFA, #8B5CF6);
+    --box6-color: linear-gradient(135deg, #F472B6, #EC4899);
+    --title-icon-color: #FFFFFF;
+    
+    /* ===== Transitions ===== */
+    --tran-05: all 0.5s ease;
+    --tran-03: all 0.3s ease;
+}
+
+body {
+    min-height: 100vh;
+    background: var(--panel-color);
+}
+
+body.dark {
+    --primary-color: #3A3B3C;
+    --panel-color: #1A202C;
+    --text-color: #E2E8F0;
+    --black-light-color: #A0AEC0;
+    --border-color: #4A5568;
+    --box1-color: linear-gradient(135deg, #4A5568, #2D3748);
+    --box2-color: linear-gradient(135deg, #4A5568, #2D3748);
+    --box3-color: linear-gradient(135deg, #4A5568, #2D3748);
+    --box4-color: linear-gradient(135deg, #4A5568, #2D3748);
+    --box5-color: linear-gradient(135deg, #4A5568, #2D3748);
+    --box6-color: linear-gradient(135deg, #4A5568, #2D3748);
+    --title-icon-color: #E2E8F0;
+}
+
+/* === Custom Scroll Bar === */
+::-webkit-scrollbar {
+    width: 8px;
+}
+::-webkit-scrollbar-track {
+    background: var(--panel-color);
+}
+::-webkit-scrollbar-thumb {
+    background: var(--primary-color);
+    border-radius: 12px;
+}
+::-webkit-scrollbar-thumb:hover {
+    background: #A3A744;
+}
+body.dark ::-webkit-scrollbar-thumb:hover {
+    background: #4A5568;
+}
+
+.dashboard {
+    position: relative;
+    left: 250px;
+    background-color: var(--panel-color);
+    min-height: 100vh;
+    width: calc(100% - 250px);
+    padding: 20px;
+    transition: var(--tran-05);
+    border-radius: 10px 0 0 10px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+nav.close ~ .dashboard {
+    left: 73px;
+    width: calc(100% - 73px);
+}
+
+.dashboard .top {
+    position: fixed;
+    top: 0;
+    left: 250px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: calc(100% - 250px);
+    padding: 15px 20px;
+    background: var(--panel-color);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+    transition: var(--tran-05);
+    z-index: 10;
+}
+nav.close ~ .dashboard .top {
+    left: 73px;
+    width: calc(100% - 73px);
+}
+
+.top .sidebar-toggle {
+    font-size: 28px;
+    color: var(--text-color);
+    cursor: pointer;
+    transition: var(--tran-03);
+}
+.top .sidebar-toggle:hover {
+    color: var(--primary-color);
+    transform: scale(1.1);
+}
+
+.top .search-box {
+    position: relative;
+    height: 45px;
+    max-width: 500px;
+    width: 100%;
+    margin: 0 20px;
+}
+.top .search-box input {
+    width: 100%;
+    height: 100%;
+    border: 1px solid var(--border-color);
+    background: var(--panel-color);
+    border-radius: 25px;
+    padding: 0 20px 0 45px;
+    font-size: 15px;
+    color: var(--text-color);
+    outline: none;
+    transition: var(--tran-03);
+}
+.top .search-box input:focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 5px rgba(186, 195, 78, 0.3);
+}
+.top .search-box i {
+    position: absolute;
+    left: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 20px;
+    color: var(--black-light-color);
+}
+
+.top img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid var(--primary-color);
+    transition: var(--tran-03);
+}
+.top img:hover {
+    transform: scale(1.1);
+}
+
+.dash-content {
+    padding-top: 70px;
+}
+
+.dash-content .title {
+    display: flex;
+    align-items: center;
+    margin: 30px 0;
+}
+.dash-content .title i {
+    width: 40px;
+    height: 40px;
+    background: var(--primary-color);
+    border-radius: 8px;
+    color: var(--title-icon-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    transition: var(--tran-03);
+}
+.dash-content .title .text {
+    font-size: 24px;
+    font-weight: 600;
+    color: var(--text-color);
+    margin-left: 10px;
+}
+
+.dash-content .boxes {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    animation: fadeIn 0.5s ease forwards;
+}
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.dash-content .boxes .box {
+    flex: 1;
+    min-width: 250px;
+    padding: 20px;
+    border-radius: 12px;
+    background: var(--box1-color);
+    color: var(--title-icon-color);
+    text-align: center;
+    transition: var(--tran-03);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+.boxes .box:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+}
+.boxes .box.box2 {
+    background: var(--box2-color);
+}
+.boxes .box.box3 {
+    background: var(--box3-color);
+}
+.boxes .box.box4 {
+    background: var(--box4-color);
+}
+.boxes .box.box5 {
+    background: var(--box5-color);
+}
+.boxes .box.box6 {
+    background: var(--box6-color);
+}
+.boxes .box i {
+    font-size: 40px;
+    margin-bottom: 10px;
+}
+.boxes .box .text {
+    font-size: 18px;
+    font-weight: 500;
+}
+.boxes .box .number {
+    font-size: 36px;
+    font-weight: 600;
+}
+
+@media (max-width: 1200px) {
+    .dash-content .boxes .box {
+        min-width: 45%;
+    }
+}
+
+@media (max-width: 1000px) {
+    nav ~ .dashboard {
+        left: 73px;
+        width: calc(100% - 73px);
+    }
+    nav.close ~ .dashboard {
+        left: 250px;
+        width: calc(100% - 250px);
+    }
+    nav ~ .dashboard .top {
+        left: 73px;
+        width: calc(100% - 73px);
+    }
+    nav.close ~ .dashboard .top {
+        left: 250px;
+        width: calc(100% - 250px);
+    }
+}
+
+@media (max-width: 780px) {
+    .dash-content .boxes .box {
+        min-width: 45%;
+    }
+}
+
+@media (max-width: 560px) {
+    .dash-content .boxes .box {
+        min-width: 100%;
+    }
+}
+
+@media (max-width: 400px) {
+    nav ~ .dashboard {
+        left: 0;
+        width: 100%;
+        border-radius: 0;
+    }
+    nav.close ~ .dashboard {
+        left: 73px;
+        width: calc(100% - 73px);
+    }
+    nav ~ .dashboard .top {
+        left: 0;
+        width: 100%;
+    }
+    nav.close ~ .dashboard .top {
+        left: 0;
+        width: 100%;
+    }
+}
